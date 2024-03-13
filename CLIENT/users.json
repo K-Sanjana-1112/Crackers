@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "username": "Sanjana",
+      "password": "sanju",
+      "email": "sanjana@1234",
+      "id": 1
+    },
+    {
+      "username": "Madhuri",
+      "password": "madhu",
+      "email": "madhuri@1234",
+      "id": 2
+    },
+    {
+      "username": "Mounika",
+      "password": "mouni",
+      "email": "mounika@1234",
+      "id": 3
+    },
+    {
+      "username": "Ankitha",
+      "password": "anki",
+      "email": "ankitha@1234",
+      "id": 4
+    },
+    {
+      "username": "Janvi",
+      "password": "janvi",
+      "email": "ja",
+      "id": 5
+    },
+    {
+      "username": "Reyansh",
+      "password": "reyansh",
+      "email": "reyansh@1234",
+      "id": 6
+    },
+    {
+      "username": "Sanjana",
+      "password": "sanju",
+      "email": "sanjana@1234",
+      "id": 7
+    }
+  ]
+}

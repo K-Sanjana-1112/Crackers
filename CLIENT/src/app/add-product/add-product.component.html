@@ -1,0 +1,86 @@
+<p>add-product works!</p>
+
+<!-- <p class=" display-3 text-center text-success">REGISTER</p> -->
+
+<div class="lead container " >
+   
+
+
+    <form class="mx-auto" [formGroup]="product" (ngSubmit)="submit()" #ref="ngForm">
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text"  id="category"  class="form-control"  formControlName="category">
+    
+        </div>
+    
+        <div *ngIf="category?.invalid && (category?.dirty || category?.touched || ref.submitted)">
+            <p  *ngIf="category?.errors?.['required'] " class="text-danger">Category is required</p>
+            
+        </div>
+        
+    <div class="mb-3">
+            <label for="image" class="form-label">image</label>
+            <input type="file"  id="image" name="photo" class="form-control" (input)="onChange(f.files[0])"  formControlName="image" #f >
+    
+        </div>
+    
+    <div *ngIf="image?.invalid && (image?.dirty || image?.touched || ref.submitted)">
+        <p  *ngIf="image?.errors?.['required'] " class="text-danger">Image is required</p>
+  
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">title</label>
+        <input type="text"  id="title"  class="form-control"  formControlName="title">
+
+    </div>
+
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched || ref.submitted)">
+        <p  *ngIf="title?.errors?.['required'] " class="text-danger">Title is required</p>
+        
+    </div>
+    
+    
+         
+        <div class="mb-3">
+            <label for="details" class="form-label">Details</label>
+            <input type="text"  id="details" class="form-control" formControlName="details">
+    
+        </div>
+    
+        <div *ngIf="details?.invalid && (price?.dirty || price?.touched || ref.submitted)">
+            <p *ngIf="price?.errors?.['required']" class="text-danger">Details is required</p>
+    
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number"  id="price" class="form-control" formControlName="price">
+    
+        </div>
+    
+        <div *ngIf="price?.invalid && (price?.dirty || price?.touched || ref.submitted)">
+            <p *ngIf="price?.errors?.['required']" class="text-danger">Price is required</p>
+    
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number"  id="quantity" min="0" value="0" class="form-control" formControlName="quantity">
+    
+        </div>
+    
+        <div *ngIf="quantity?.invalid && (quantity?.dirty || quantity?.touched || ref.submitted)">
+            <p *ngIf="quantity?.errors?.['required']" class="text-danger">Quantity is required</p>
+    
+        </div>
+
+        
+     <button class="btn btn-success">ADD</button>
+    
+    
+    </form>
+</div>
+
+

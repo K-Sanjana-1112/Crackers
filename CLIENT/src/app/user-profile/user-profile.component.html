@@ -1,0 +1,28 @@
+
+
+
+<div *ngIf="!isSeller" class="h6">
+    <p>Welcome,{{loggedInUser?.username}}</p>
+    <p>{{loggedInUser?.emailControl}}</p>
+   <button  class="btn btn-primary" (click)="getProducts()">View Products</button>
+    <button  class="btn btn-primary"  (click)="getAddCart()">View Cart </button>
+  
+</div>
+
+<div *ngIf="isSeller" class="h6">
+    <p>Welcome,{{loggedInSeller?.username}}</p>
+    <p>{{loggedInSeller?.emailControl}}</p>
+    
+        <button  (click)="getProducts()">View Products</button>
+        <button  (click)="getAddProducts()">Add Products</button>
+
+
+
+</div>
+
+<!-- <button class="btn btn-primary" (click)="getProtectedData()">View Sensitive Data</button> -->
+
+<!-- <p>{{protectedUser}}</p> -->
+
+
+

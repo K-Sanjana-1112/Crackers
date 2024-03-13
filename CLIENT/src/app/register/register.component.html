@@ -1,0 +1,94 @@
+<!-- <p class=" display-3 text-center text-success">REGISTER</p> -->
+
+<div class="lead container " >
+
+
+    <form class="mx-auto" [formGroup]="register" (ngSubmit)="onFormRegister()" #ref="ngForm">
+        
+        @if(displayUserStatus==true){
+            <p class="text-danger h5">User Name Already Existed</p>
+
+        }
+       
+     
+
+
+        <input type="radio" id="user" value="user" name="register" checked (change)="Register($event)" >
+        <label for="user">User</label>
+
+        <input type="radio" id="seller" value="seller" name="register"  (change)="Register($event)" >
+        <label for="user">Seller</label>
+    
+        <div class="mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text"  id="username"  class="form-control"  formControlName="username">
+    
+        </div>
+    
+    <div *ngIf="username?.invalid && (username?.dirty || username?.touched || ref.submitted)">
+        <p  *ngIf="username?.errors?.['required'] " class="text-danger">UserName is required</p>
+        <p *ngIf="username?.errors?.['minlength']" class="text-danger">Min length is 5</p>
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="password"  id="pwd"  class="form-control"  formControlName="password">
+
+    </div>
+
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched || ref.submitted)">
+        <p  *ngIf="password?.errors?.['required'] " class="text-danger">Password is required</p>
+        
+    </div>
+    
+    
+         
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email"  id="email" class="form-control" formControlName="emailControl">
+    
+        </div>
+    
+        <div *ngIf="emailControl?.invalid && (emailControl?.dirty || emailControl?.touched || ref.submitted)">
+            <p *ngIf="emailControl?.errors?.['required']" class="text-danger">Email is required</p>
+    
+        </div>
+
+        <!-- <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text"  id="address" class="form-control" formControlName="address">
+    
+        </div>
+        --->
+        
+              <div *ngIf="!isSeller">
+                <label for="address" class="form-label">Address</label>
+              <input type="text"  id="address" class="form-control"  formControlName="address">
+                <!-- <p  *ngIf="address?.errors?.['required'] " class="text-danger">Address is required</p> -->
+                </div>
+               
+              
+
+        <div *ngIf="isSeller">
+            <div>
+           <label for="comp">Company Name</label>
+            <select class="form-control" id="comp"  formControlName="companyName">
+                <option selected >Select One...</option>
+                <option>Cognizant</option>
+                <option >Panasonic</option>
+                <option>LLoyd</option>
+
+            </select>
+        </div>
+                
+        </div> 
+
+           
+        
+
+        
+              <button class="btn btn-success">Register</button>
+    
+    
+    </form>
+</div>
+

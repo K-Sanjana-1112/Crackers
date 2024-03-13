@@ -1,0 +1,18 @@
+<div class="fluid-container">
+  <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-2" *ngFor="let item of cartItems; let i=index">
+  
+          <div class="card"  style="width: 14rem;">
+              <img [src]="item.image" class="card-img-top"  width="200px"  height="200px" >
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text" style="height:12rem">{{ item.details }}</p>
+                <p class="card-text">Price: {{ item.price |currency:'INR' }}</p>
+                <p class="card-text">Quantity: {{ item.quantity }}</p>
+                <p class="btn btn-primary"   (click)="removeItem(i)">Remove From Cart</p>
+              </div>
+            </div>
+  
+  </div>
+  </div>
+  </div>

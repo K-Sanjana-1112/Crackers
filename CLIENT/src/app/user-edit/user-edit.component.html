@@ -1,0 +1,26 @@
+
+
+<div>
+    @if(userEditStatus===false){
+        <div>
+        <p class="lead">Welcome:{{user.username}} </p>
+       
+        <p class="lead">{{user.email}}</p>
+        <button class="btn btn-primary" (click)="onUserEdit()">Edit
+   
+        </button>  
+    </div>
+ 
+    }@else{
+ 
+        <form [formGroup]="userEdit" (ngSubmit)="onUserSave()" >
+        <input type="text" formControlName="username" class="form-control">
+        <input type="text" formControlName="email" class="form-control">
+        <button type="submit" class="btn btn-primary" >Save</button>
+    </form>
+}    
+    </div>
+
+
+
+
